@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Country House — Каркасные дома и бани под ключ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" href="img/home-icon.png">
+  <link rel="shortcut icon" href="img/home-icon.png" type="image/png">
+
+  <!-- Шрифт Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <div class="page">
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="topbar__inner">
+        <div class="topbar__left">
+          <span class="topbar__icon">☎</span>
+          <a class="topbar__phone" href="tel:+79110011242">+7 (911) 001-12-42</a>
+        </div>
+        <div class="topbar__right">
+          Россия, Севастополь, улица Отрадная 15/1 · СК «Country House» — каркасные дома и бани
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__inner">
+        <div class="logo">COUNTRY HOUSE</div>
+
+        <nav class="nav">
+          <a href="#hero" class="nav__link">Главная</a>
+          <a href="#catalog" class="nav__link">Каталог</a>
+          <a href="#reviews" class="nav__link">Отзывы</a>
+          <a href="#faq" class="nav__link">Вопросы</a>
+          <a href="#about" class="nav__link">О нас</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
+          <button class="btn btn_header" onclick="document.getElementById('contacts').scrollIntoView({behavior: 'smooth'})">
+            Оставить заявку
+          </button>
+        </nav>
+
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Мобильное меню -->
+      <nav class="nav-mobile" id="nav-mobile">
+        <a href="#hero">Главная</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+        <button class="btn btn_header" onclick="document.getElementById('contacts').scrollIntoView({behavior: 'smooth'})">
+          Оставить заявку
+        </button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Строительство каркасных домов и бань
+          </h1>
+          <p class="hero__subtitle">
+            В Санкт-Петербурге, Ленинградской области и на Крымском полуострове под ключ.
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn_hero-primary">
+              Рассчитать стоимость
+            </button>
+            <button class="btn btn_hero-secondary" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">
+              Смотреть проекты
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-top" id="about-top">
+      <div class="about-top__inner">
+        <div class="about-top__text">
+          <h2>О нас</h2>
+          <p>
+            СК «Country House» строит каркасные дома и бани в Санкт-Петербурге,
+            Ленинградской области и на Крымском полуострове. Мы используем
+            собственное деревообрабатывающее производство, что позволяет держать
+            качество и цену под контролем.
+          </p>
+          <p>
+            Работаем без посредников и скрытых доплат, фиксируем стоимость в договоре
+            и не меняем её в процессе. Строим под ключ, работаем с материнским
+            капиталом и поэтапной оплатой.
+          </p>
+        </div>
+
+        <div class="about-top__map-card">
+          <div class="about-top__map-inner">
+            <!-- начальное фото — Севастополь -->
+            <img
+              src="/img/sevastop-img.png"
+              alt="Карта Севастополя"
+              class="about-top__map-img about-top__map-img--active"
+            >
+            <!-- второе фото — Санкт-Петербург -->
+            <img
+              src="/img/spb-img.png"
+              alt="Карта Санкт-Петербурга"
+              class="about-top__map-img"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- CATALOG -->
+    <section class="section catalog" id="catalog">
+      <div class="section-title">
+        <h2>Каталог проектов</h2>
+        <p>Популярные каркасные дома и бани от Country House.</p>
+      </div>
+
+      <!-- Табы -->
+      <div class="catalog-tabs">
+        <button class="catalog-tab catalog-tab--active" data-type="house">Дома</button>
+        <button class="catalog-tab" data-type="bath">Бани</button>
+      </div>
+      <div class="catalog-count" id="catalog-count">Всего 5 проектов</div>
+
+      <!-- Слайдер с боковыми стрелками -->
+      <div class="catalog-slider">
+        <button class="catalog-side-arrow catalog-side-arrow--prev" type="button" aria-label="Назад">
+          <span></span>
+        </button>
+
+        <div class="catalog-viewport">
+          <div class="catalog-track" id="catalog-track">
+            <!-- Карточки подставляются из JS -->
+          </div>
+        </div>
+
+        <button class="catalog-side-arrow catalog-side-arrow--next" type="button" aria-label="Вперёд">
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Модальное окно каталога -->
+      <div class="catalog-modal" id="catalog-modal">
+        <div class="catalog-modal__backdrop"></div>
+        <div class="catalog-modal__content">
+          <button class="catalog-modal__close" type="button" aria-label="Закрыть">✕</button>
+          <h3 class="catalog-modal__title" id="catalog-modal-title"></h3>
+          <p class="catalog-modal__price" id="catalog-modal-price"></p>
+          <p class="catalog-modal__meta" id="catalog-modal-meta"></p>
+          <p class="catalog-modal__text" id="catalog-modal-text"></p>
+          <a
+            class="catalog-modal__link"
+            id="catalog-modal-link"
+            href="#about-form">
+            Оставить заявку
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- REVIEWS -->
+    <section class="section reviews" id="reviews">
+      <div class="reviews-title">
+        <h2>Отзывы</h2>
+        <p>
+          Прочитайте, что пишут о нас
+          <span class="reviews-title__accent">клиенты.</span>
+        </p>
+      </div>
+
+      <div class="reviews-slider">
+        <!-- Левая стрелка -->
+        <button class="reviews-arrow reviews-arrow--prev" type="button" aria-label="Предыдущие отзывы">
+          <span></span>
+        </button>
+
+        <!-- Область слайдера -->
+        <div class="reviews-pages">
+          <!-- Страница 1 -->
+          <div class="reviews-page reviews-page--active">
+            <!-- 1 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Лара Волосы-Волосики</div>
+                  </div>
+                </div>
+                <div class="review-date">04.03.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Нам построили прекрасный каркасный дом! Всё сделали в срок, аккуратно и профессионально.
+              </p>
+            </article>
+
+            <!-- 2 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Игорь Мельников</div>
+                  </div>
+                </div>
+                <div class="review-date">12.05.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Отличная бригада! Построили баню под ключ, работа без сюрпризов, цена фиксированная.
+              </p>
+            </article>
+
+            <!-- 3 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Анастасия Степанова</div>
+                  </div>
+                </div>
+                <div class="review-date">14.06.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Очень довольны сотрудничеством! Приезжали вовремя, работали чисто, дом получился шикарный.
+              </p>
+            </article>
+
+            <!-- 4 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Павел Чернов</div>
+                  </div>
+                </div>
+                <div class="review-date">09.07.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Компанию рекомендую! Сделали фундамент и коробку быстрее срока.
+              </p>
+            </article>
+
+            <!-- 5 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Катерина Ромашкина</div>
+                  </div>
+                </div>
+                <div class="review-date">18.08.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Отличный сервис, отзывчивая команда, помогли с выбором проекта!
+              </p>
+            </article>
+
+            <!-- 6 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Вячеслав Грин</div>
+                  </div>
+                </div>
+                <div class="review-date">10.09.2022 г.</div>
+              </div>
+              <p class="review-text">
+                СК Country House — молодцы, дом получился тёплым и надёжным.
+              </p>
+            </article>
+          </div>
+
+          <!-- Страница 2 -->
+          <div class="reviews-page">
+            <!-- 7 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Мария Логинова</div>
+                  </div>
+                </div>
+                <div class="review-date">04.10.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Работой остались довольны, особенно качеством отделки.
+              </p>
+            </article>
+
+            <!-- 8 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Антон Петров</div>
+                  </div>
+                </div>
+                <div class="review-date">22.10.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Дом под ключ за 2 месяца — это просто космос. Спасибо!
+              </p>
+            </article>
+
+            <!-- 9 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">София Кравцова</div>
+                  </div>
+                </div>
+                <div class="review-date">05.11.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Лучшая строительная компания, с которой мы работали.
+              </p>
+            </article>
+
+            <!-- 10 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Елена Кравченко</div>
+                  </div>
+                </div>
+                <div class="review-date">18.11.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Помогли адаптировать типовой проект под наш участок. Всё прозрачно и понятно.
+              </p>
+            </article>
+
+            <!-- 11 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Дмитрий Орлов</div>
+                  </div>
+                </div>
+                <div class="review-date">02.12.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Команда постоянно была на связи, фотки с этапов строительства присылали в Telegram.
+              </p>
+            </article>
+
+            <!-- 12 -->
+            <article class="review-card">
+              <div class="review-card__top">
+                <div class="review-card__person">
+                  <div class="review-avatar"></div>
+                  <div class="review-card__info">
+                    <div class="review-name">Олег и Наталья</div>
+                  </div>
+                </div>
+                <div class="review-date">15.12.2022 г.</div>
+              </div>
+              <p class="review-text">
+                Строили баню для родителей. Всё по договору, без допов и «сюрпризов».
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Правая стрелка -->
+        <button class="reviews-arrow reviews-arrow--next" type="button" aria-label="Следующие отзывы">
+          <span></span>
+        </button>
+      </div>
+    </section>
+
+
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <h2 class="faq-title">Частые вопросы</h2>
+
+      <div class="faq-inner">
+        <div class="faq-item active">
+          <div class="faq-question">
+            Какие преимущества имеет строительство каркасного дома?
+          </div>
+          <div class="faq-answer">
+            <p>
+              Каркасный дом быстро строится, хорошо держит тепло и обходится дешевле классического каменного.
+              Мы используем энергоэффективные материалы и проверенные технологии.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Как заказать каркасный дом или баню у СК «Country House»?
+          </div>
+          <div class="faq-answer">
+            <p>
+              Выбираете проект на сайте или приносите свой, созваниваемся, обсуждаем детали, фиксируем стоимость в договоре —
+              и через несколько недель у вас стоит готовый дом.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Какие материалы вы используете при строительстве?
+          </div>
+          <div class="faq-answer">
+            <p>
+              Только сухой строганный пиломатериал, сертифицированный утеплитель, ветрозащиту и качественные фасадные материалы.
+              Всё соответствует действующим нормам.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Могу ли я строить дом поэтапно?
+          </div>
+          <div class="faq-answer">
+            <p>
+              Да, мы можем разбить строительство на несколько этапов: фундамент, коробка, отделка.
+              Стоимость каждого этапа фиксируется заранее.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT + FORM -->
+    <section class="about-wrap" id="about">
+      <div class="about-inner">
+        <!-- ЛЕВАЯ ЧАСТЬ: оффер + преимущества -->
+        <div class="about-offer">
+          <h2 class="about-offer__title">
+            Построим дом, в котором будет жить
+            <span class="about-offer__highlight">ваша</span> семья — надёжно, быстро
+            и по <span class="about-offer__highlight about-offer__highlight--underline">честной цене</span>
+          </h2>
+
+          <p class="about-offer__subtitle">
+            Мы фиксируем стоимость в договоре, используем собственное производство
+            и сдаём проекты точно в срок.
+          </p>
+
+          <div class="about-benefits">
+            <div class="about-benefit">
+              <div class="about-benefit__icon">
+                <img src="img/person-check-fill.svg" alt="Работаем без посредников">
+              </div>
+              <div class="about-benefit__label">
+                Работаем без посредников
+              </div>
+            </div>
+
+            <div class="about-benefit">
+              <div class="about-benefit__icon">
+                <img src="img/calendar-check.svg" alt="Гарантия на дом — 5 лет">
+              </div>
+              <div class="about-benefit__label">
+                Гарантия на дом — 5 лет
+              </div>
+            </div>
+
+            <div class="about-benefit">
+              <div class="about-benefit__icon">
+                <img src="img/cash-coin.svg" alt="Цена не меняется в процессе">
+              </div>
+              <div class="about-benefit__label">
+                Цена не меняется в процессе
+              </div>
+            </div>
+
+            <div class="about-benefit">
+              <div class="about-benefit__icon">
+                <img src="img/clipboard2-check.svg" alt="Бесплатная консультация инженера">
+              </div>
+              <div class="about-benefit__label">
+                Бесплатная консультация инженера
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <!-- ПРАВАЯ ЧАСТЬ: форма (как была) -->
+        <form class="about-form" id="about-form">
+          <h3>Оставьте заявку</h3>
+          <p>Укажете контакты — перезвоним, обсудим проект и подскажем по стоимости.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="last-name">Фамилия</label>
+              <input id="last-name" type="text" placeholder="Иванов">
+            </div>
+            <div class="form-group">
+              <label for="first-name">Имя</label>
+              <input id="first-name" type="text" placeholder="Иван">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input id="phone" type="tel" placeholder="+7 (___) ___-__-__">
+          </div>
+
+          <div class="form-group" style="margin-top: 10px;">
+            <label for="project">Кратко о проекте</label>
+            <textarea id="project" rows="3" placeholder="Например: дом 120–150 м², 2 этажа, с террасой..."></textarea>
+          </div>
+
+          <div class="about-actions">
+            <button class="btn btn_about-submit" type="submit">
+              Отправить заявку
+            </button>
+            <a class="about-telegram" href="https://t.me/your_company" target="_blank" rel="noreferrer">
+              Напишите нам в Telegram
+            </a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- CONTACTS -->
+    <section class="section contacts" id="contacts">
+      <div class="section-title">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами, чтобы обсудить ваш будущий дом.</p>
+      </div>
+
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <div class="contact-card__title">
+            Телефон: <a href="tel:+79110011242">+7 (911) 001-12-42</a>
+          </div>
+          <div class="contact-card__address">
+            Россия, Санкт-Петербург<br>
+            улица Гражданская 5
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__title">
+            Телефон: <a href="tel:+79780521262">+7 (978) 052-12-62</a>
+          </div>
+          <div class="contact-card__address">
+            Россия, Севастополь<br>
+            улица Отрадная 15/1
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts-social">
+        <p class="contacts-social__title">Мы в социальных сетях:</p>
+        <div class="contacts-social__list">
+          <a
+            href="https://vk.com"
+            target="_blank"
+            rel="noreferrer"
+            class="social-icon social-icon--vk"
+          >
+            <span>VK</span>
+          </a>
+          <a
+            href="https://t.me"
+            target="_blank"
+            rel="noreferrer"
+            class="social-icon social-icon--tg"
+          >
+            <span>TG</span>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            class="social-icon social-icon--ig"
+          >
+            <span>IG</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <footer class="footer">
+      © 2025 СК «Country House». Все права защищены.
+    </footer>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
