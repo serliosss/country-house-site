@@ -229,15 +229,13 @@
     .hero {
         position: relative;
         flex: 1;
-        margin-top: 116px; /* как было */
+        margin-top: 116px; 
         display: flex;
         align-items: stretch;
         justify-content: center;
         color: var(--white);
         overflow: hidden;
         min-height: calc(100vh - 116px);
-        
-        /* ВОТ ЭТО ГЛАВНОЕ */
         background:
           linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.6)),
           url("./img/main_bg.jpg") center/cover no-repeat;
@@ -494,12 +492,12 @@
       flex: 1;
       overflow-x: auto;
       overflow-y: visible;
-      scroll-behavior: smooth; /* плавный скролл по кнопкам */
-      -ms-overflow-style: none;     /* IE, Edge */
-      scrollbar-width: none;        /* Firefox */
+      scroll-behavior: smooth; 
+      -ms-overflow-style: none;
+      scrollbar-width: none; 
     }
     .catalog-viewport::-webkit-scrollbar {
-      display: none;                /* Chrome, Safari */
+      display: none;
     }
 
     .catalog-track {
@@ -508,11 +506,7 @@
       gap: 24px;
       padding: 6px 0 4px;
       transform: translateX(0);
-      /* scroll-behavior убрали отсюда */
     }
-
-
-    /* Карточка — как на макете */
 
     .catalog-card {
       flex: 0 0 320px;
@@ -589,8 +583,6 @@
     .catalog-card__btn:hover {
       background: var(--accent-dark);
     }
-
-    /* Стрелки сбоку — стиль как у отзывов */
 
     .catalog-side-arrow {
       width: 40px;
@@ -738,9 +730,8 @@
 
   
     /* ---------- REVIEWS ---------- */
-    /* Чуть шире контейнер именно для отзывов */
     .section.reviews {
-      max-width: 1320px; /* было 1200, стало шире */
+      max-width: 1320px; 
       min-height: 600px;
     }
 
@@ -793,15 +784,10 @@
 
     .reviews-pages {
       flex: 1;
-      /* position: relative;
-      overflow: hidden;
-      transition: height 0.4s ease; */
     }
 
-    /* Страницы — поверх друг друга, плавный fade+slide */
-
     .reviews-page {
-      display: none; /* по умолчанию скрыта */
+      display: none;
       opacity: 0;
       transform: translateX(40px);
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -810,7 +796,7 @@
     }
 
     .reviews-page--active {
-      display: grid;          /* показываем сетку */
+      display: grid;    
       opacity: 1;
       transform: translateX(0);
     }
@@ -847,8 +833,6 @@
       gap: 12px;
     }
 
-    /* ФОТО, как было в исходнике */
-
     .review-avatar {
       width: 40px;
       height: 40px;
@@ -864,9 +848,9 @@
     .review-name {
       font-weight: 700;
       font-size: 15px;
-      white-space: nowrap;        /* не переносим имя */
+      white-space: nowrap;       
       overflow: hidden;
-      text-overflow: ellipsis;    /* если вдруг совсем длинное */
+      text-overflow: ellipsis;   
     }
 
     .review-date {
@@ -950,8 +934,6 @@
       padding-bottom: 100px;
     }
 
-    /* 2 столбца карточек на десктопе */
-
     .contacts-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(260px, 1fr));
@@ -1007,15 +989,13 @@
       gap: 20px;
     }
 
-    /* Иконка = внешнее кольцо + внутренний зелёный круг */
-
     .social-icon {
       position: relative;
       width: 60px;
       height: 60px;
       border-radius: 50%;
       background: #ebebeb;
-      border: 2px solid #d8d8d8; /* внешнее светлое кольцо */
+      border: 2px solid #d8d8d8;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1027,9 +1007,9 @@
     .social-icon::before {
       content: "";
       position: absolute;
-      inset: 6px;                /* внутренний круг поменьше */
+      inset: 6px;
       border-radius: 50%;
-      background: #1E6F5C;       /* зелёная заливка */
+      background: #1E6F5C;
     }
 
     .social-icon span {
@@ -1041,7 +1021,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* Можно чуть отличать между собой, если захочешь дальше доработать */
     .social-icon--vk span { font-size: 15px; }
     .social-icon--tg span { font-size: 16px; }
     .social-icon--ig span { font-size: 16px; }
@@ -1050,8 +1029,6 @@
       transform: translateY(-2px);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
     }
-
-    /* Адаптив: на мобиле карточки в 1 колонку */
 
     @media (max-width: 700px) {
       .contacts-grid {
@@ -1145,13 +1122,12 @@
       color: #f5f5f5;
     }
 
-    /* выравниваем по высоте, как в макете */
     .about-inner {
         max-width: var(--container-width);
         margin: 0 auto;
         padding: 0 24px;
         display: flex;
-        align-items: center; /* ← БЫЛО flex-start */
+        align-items: center; 
         justify-content: space-between;
         gap: 70px;
     }
@@ -1159,7 +1135,7 @@
     .about-offer {
       flex: 1.3;
       max-width: 640px;
-      padding-top: 10px; /* можно 0–20px по вкусу */
+      padding-top: 10px; 
     }
 
     .about-form {
@@ -1199,8 +1175,6 @@
       margin-bottom: 26px;
     }
 
-    /* преимущества: сетка 2х2 */
-
     .about-benefits {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1217,7 +1191,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: var(--accent); /* зелёный круг */
+      background: var(--accent); 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1235,7 +1209,6 @@
       color: #d9e4e0;
     }
 
-    /* правая форма — как была, просто уточним flex */
     .about-form {
       flex: 0.9;
       background: rgba(8, 20, 17, 0.9);
@@ -1344,8 +1317,6 @@
       background: rgba(34, 158, 222, 0.25);
     }
 
-    /* адаптив, чтобы на мобиле всё складывалось в колонку */
-
     @media (max-width: 960px) {
       .about-inner {
         flex-direction: column;
@@ -1425,7 +1396,7 @@
 
       .nav-mobile {
         position: fixed;
-        top: 116px; /* под топбаром и шапкой */
+        top: 116px; 
         left: 0;
         right: 0;
         background: #ffffff;
@@ -1526,7 +1497,7 @@
       }
 
       .hero {
-        margin-top: 108px; /* 36 + 72 */
+        margin-top: 108px; 
       }
 
       .header__inner {
