@@ -40,7 +40,7 @@
           <a href="#faq" class="nav__link">Вопросы</a>
           <a href="#about" class="nav__link">О нас</a>
           <a href="#contacts" class="nav__link">Контакты</a>
-          <button class="btn btn_header" onclick="document.getElementById('contacts').scrollIntoView({behavior: 'smooth'})">
+          <button type="button" class="btn btn_header" onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'center' })">
             Оставить заявку
           </button>
         </nav>
@@ -93,7 +93,7 @@
 
 
     <!-- ABOUT -->
-    <section class="about-top" id="about-top">
+    <section class="about-top" id="about">
       <div class="about-top__inner">
         <div class="about-top__text">
           <h2>О нас</h2>
@@ -462,7 +462,7 @@
     </section>
 
     <!-- ABOUT + FORM -->
-    <section class="about-wrap" id="about">
+    <section class="about-wrap" id="form">
       <div class="about-inner">
         <!-- ЛЕВАЯ ЧАСТЬ: оффер + преимущества -->
         <div class="about-offer">

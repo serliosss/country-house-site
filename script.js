@@ -280,6 +280,29 @@
 
       // начальная высота
       setTimeout(() => setContainerHeight(currentPage), 50);
+      
+
+      // Плавный скролл по меню так, чтобы секция была по центру
+      const navLinks = document.querySelectorAll('header a[href^="#"]');
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+
+          // типа href="#about" → берём элемент с id="about"
+          if (!targetId || targetId === "#") return;
+
+          const targetEl = document.querySelector(targetId);
+          if (!targetEl) return;
+
+          e.preventDefault();
+
+          targetEl.scrollIntoView({
+            behavior: "smooth",
+            block: "center" // вот тут магия – центрируем блок по вертикали
+          });
+        });
+      });
     });
 
 
